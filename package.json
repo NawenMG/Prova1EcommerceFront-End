@@ -29,6 +29,7 @@
     "@ngrx/router-store": "^19.0.0",
     "@ngrx/store": "^19.0.0",
     "@ngrx/store-devtools": "^19.0.0",
+    "@types/stompjs": "^2.3.9",
     "animate.css": "^4.1.1",
     "aos": "^2.3.4",
     "apollo-angular": "^8.0.0",
@@ -42,6 +43,7 @@
     "react-dom": "^19.0.0",
     "rxjs": "~7.8.0",
     "soap": "^1.1.7",
+    "stompjs": "^2.3.3",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"
   },
