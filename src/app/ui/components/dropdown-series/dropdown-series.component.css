@@ -1,0 +1,71 @@
+/* NAVBAR GENERALE */
+.navbar {
+  background-color: #F4F4F4;
+  border: 2px solid #4B4B4B;
+  padding: 5px;
+  margin: 0;
+}
+
+/* GRIGLIA DEI DROPDOWNS */
+.container-grid {
+  display: grid;
+  grid-template-areas:
+  "dropdownMenuButton1 dropdownMenuButton2 dropdownMenuButton3 dropdownMenuButton4 dropdownMenuButton5 dropdownMenuButton6 dropdownMenuButton7";
+  gap: 7rem;
+}
+
+/* Effetto base con Hover.css (effetto pulsante rimbalzante) */
+.btn-primary {
+  background-color: #FFD700;
+  border: none;
+  color: #333333;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #800020;
+  color: white;
+  transform: scale(1.1); /* Effetto hover extra */
+}
+
+/* ANIMAZIONE AL PASSAGGIO DEL CURSORE */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Mostra il dropdown con animazione animate.css */
+.dropdown:hover .dropdown-menu {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  animation: animate__fadeInDown 0.5s ease-in-out;
+  z-index: 2;
+}
+
+/* ANIMAZIONE DI ENTRATA E USCITA */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+}
+
+.dropdown-menu a {
+  padding: 10px;
+  transition: all 0.3s ease;
+}
+
+/* Hover sui link con effetto di Hover.css */
+.dropdown-menu a:hover {
+  background-color: #800020;
+  color: white;
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+}

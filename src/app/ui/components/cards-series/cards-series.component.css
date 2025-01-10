@@ -1,0 +1,16 @@
+.container-grid {
+  display: grid;
+  grid-template-areas:
+      'card1 card2'
+      'card3 card4';
+  grid-gap: 5px;
+  background-color: #F4F4F4;
+  color: #333333;
+  padding: 5px;
+  border: 2px solid #4B4B4B;
+}
+
+#demo1 { grid-area: card1; }
+#demo2 { grid-area: card2; }
+#demo3 { grid-area: card3; }
+#demo4 { grid-area: card4; }

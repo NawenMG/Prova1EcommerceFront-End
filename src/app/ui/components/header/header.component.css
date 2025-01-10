@@ -1,0 +1,171 @@
+/* ========================== LAYOUT GENERALE ========================== */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #F4F4F4;
+  color: #333333;
+}
+
+/* ========================== HEADER FLEXBOX ========================== */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  gap: 20px;
+  background-color: #F4F4F4;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  animation: fadeInDown 1s ease;
+}
+
+/* ========================== LOGO ========================== */
+#logo {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+#logo i {
+  color: #800020;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+#logo:hover i {
+  color: #FFD700;
+  transform: scale(1.1);
+}
+
+/* ========================== DROPDOWN LINGUA ========================== */
+#select-languages {
+  display: flex;
+  flex-direction: column;
+}
+
+.language-selector {
+  border: 1px solid #4B4B4B;
+  border-radius: 5px;
+  padding: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Animazione quando si passa sopra */
+.language-selector:hover {
+  transform: scale(1.1);
+}
+
+/* ========================== BARRA DI RICERCA ========================== */
+#search-bar {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+}
+
+#search-bar input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #4B4B4B;
+  border-radius: 8px 0 0 8px;
+  outline: none;
+}
+
+.search-button {
+  background-color: #800020;
+  color: white;
+  border: none;
+  border-radius: 0 8px 8px 0;
+  padding: 10px 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+/* Effetto al passaggio */
+.search-button:hover {
+  background-color: #FFD700;
+  color: #333333;
+}
+
+/* ========================== PULSANTE CARRELLO ========================== */
+#cart {
+  background-color: #800020;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#cart:hover {
+  background-color: #FFD700;
+  color: #333333;
+  transform: scale(1.1);
+}
+
+/* ========================== LOGIN/LOGOUT BUTTON ========================== */
+#authenticated {
+  background-color: #800020;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Quando autenticato: circolare con solo icona */
+#authenticated.logged-in {
+  background-color: #800020;
+  border-radius: 50%;
+  padding: 12px;
+  width: 50px;
+  height: 50px;
+  font-size: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  animation: pulse 1.5s infinite;
+}
+
+/* Testo e icona quando non autenticato */
+#authenticated.logged-out {
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 1rem;
+}
+
+#authenticated i {
+  color: white;
+}
+
+#authenticated:hover {
+  background-color: #FFD700;
+  color: #333333;
+}
+
+/* ========================== RESPONSIVE DESIGN ========================== */
+@media (max-width: 768px) {
+  .header {
+      flex-wrap: wrap;
+      justify-content: center;
+  }
+
+  #search-bar {
+      flex-direction: column;
+      gap: 5px;
+  }
+
+  #search-bar input {
+      border-radius: 8px;
+  }
+
+  .search-button {
+      border-radius: 8px;
+  }
+}

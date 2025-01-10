@@ -1,0 +1,25 @@
+<nav class="navbar">
+  <div class="container-grid">
+      <!-- Angular Loop per le Categorie -->
+      <div class="dropdown"
+          *ngFor="let category of categories; let i = index">
+
+          <!-- Bottone Dropdown con Effetti di Hover.css -->
+          <button class="btn btn-primary dropdown-toggle btn-lg hvr-buzz"
+                  type="button"
+                  [id]="'dropdownMenuButton' + (i + 1)">
+              {{ category.name }}
+          </button>
+
+          <!-- Dropdown Menu con Animazione -->
+          <div class="dropdown-menu animate__animated animate__fadeIn"
+               [attr.aria-labelledby]="'dropdownMenuButton' + (i + 1)">
+              <a *ngFor="let subcategory of category.subcategories"
+                 class="dropdown-item hvr-grow"
+                 href="#">
+                  {{ subcategory }}
+              </a>
+          </div>
+      </div>
+  </div>
+</nav>
