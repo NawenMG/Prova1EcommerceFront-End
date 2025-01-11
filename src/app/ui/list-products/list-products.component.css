@@ -1,0 +1,13 @@
+/* Assicura che il dropdown abbia una priorità inferiore */
+.dropdown-series {
+  position: relative;
+  z-index: 3;
+}
+
+/* Assicura che il filtro appaia sopra il dropdown */
+.filter-component {
+  position: relative;
+  z-index: 2;
+}
+
+

@@ -11,20 +11,20 @@
   display: grid;
   grid-template-areas:
   "dropdownMenuButton1 dropdownMenuButton2 dropdownMenuButton3 dropdownMenuButton4 dropdownMenuButton5 dropdownMenuButton6 dropdownMenuButton7";
-  gap: 7rem;
+  gap: 7.7rem;
 }
 
 /* Effetto base con Hover.css (effetto pulsante rimbalzante) */
 .btn-primary {
-  background-color: #FFD700;
+  background-color: #800020;
   border: none;
-  color: #333333;
+  color: white;
   transition: all 0.3s ease;
 }
 
 .btn-primary:hover {
-  background-color: #800020;
-  color: white;
+  background-color: #FFD700;
+  color: #333333;
   transform: scale(1.1); /* Effetto hover extra */
 }
 
@@ -46,6 +46,8 @@
 
 /* ANIMAZIONE DI ENTRATA E USCITA */
 .dropdown-menu {
+  background-color: #800020;
+  color: white;
   display: none;
   position: absolute;
   top: 100%;
@@ -58,14 +60,15 @@
 }
 
 .dropdown-menu a {
+  color: white;
   padding: 10px;
   transition: all 0.3s ease;
 }
 
 /* Hover sui link con effetto di Hover.css */
 .dropdown-menu a:hover {
-  background-color: #800020;
-  color: white;
+  background-color: #FFD700;
+  color: #333333;
   transform: scale(1.05);
   transition: all 0.3s ease;
 }

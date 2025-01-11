@@ -1,0 +1,18 @@
+<!-- Container principale con Flexbox per la disposizione -->
+<div class="filter-container d-flex justify-content-between align-items-center">
+    <!-- Titolo H1 -->
+    <h1 class="title animate__animated animate__fadeInLeft">RISULTATI</h1>
+
+    <!-- Pulsante Dropdown con Icona FontAwesome -->
+    <div class="dropdown">
+        <button class="btn dropdown-toggle filter-button hvr-float-shadow" type="button" id="dropdownMenuButton"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fas fa-filter"></i> Filtri
+        </button>
+        <ul class="dropdown-menu animate__animated animate__fadeIn" aria-labelledby="dropdownMenuButton">
+            <li><a class="dropdown-item" href="#" (click)="applyFilter('data')">Per Data</a></li>
+            <li><a class="dropdown-item" href="#" (click)="applyFilter('nome')">Per Nome</a></li>
+            <li><a class="dropdown-item" href="#" (click)="applyFilter('prezzo')">Per Prezzo</a></li>
+        </ul>
+    </div>
+</div>

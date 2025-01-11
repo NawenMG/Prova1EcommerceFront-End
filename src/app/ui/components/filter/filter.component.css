@@ -1,0 +1,61 @@
+/* Layout di base per l'header */
+.filter-container {
+  width: 100%;
+  padding: 20px;
+  background-color: #F4F4F4;
+  border-bottom: 2px solid #333333;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  border-radius: 8px;
+}
+
+/* Stile per il titolo */
+.title {
+  font-size: 2rem;
+  color: #333333;
+  margin: 0;
+  font-weight: bold;
+}
+
+/* Stile per il pulsante */
+.filter-button {
+  background-color: #800020;
+  color: #F4F4F4;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.filter-button:hover {
+  background-color: #FFD700;
+  color: #333333;
+  transform: scale(1.1);
+}
+
+/* Dropdown Menu Style */
+.dropdown-menu {
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.dropdown-item {
+  background-color:  #800020;
+  color: #F4F4F4;
+  padding: 10px;
+  transition: all 0.3s ease;
+}
+
+.dropdown-item:hover {
+  background-color: #FFD700;
+  color: #333333;
+  transform: translateX(10px);
+}
+
+/* Animazioni con Animate.css */
+.animate__animated {
+  animation-duration: 1s;
+}

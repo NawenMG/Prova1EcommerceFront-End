@@ -1,0 +1,56 @@
+<div class="container " style="background-color: #FAFAFA; margin: 50px;">
+
+    <!-- Grid con 5 card per riga -->
+    <div class="row g-4">
+        <div class="col-md-2" *ngFor="let product of products; let i = index">
+            <!-- Card del Prodotto -->
+            <div class="product-card card hvr-shadow" style="border-radius: 15px; overflow: hidden;">
+
+                <!-- Icone Cuoricino e Salvataggio -->
+                <div class="position-absolute top-0 end-0 p-3">
+                    <i class="fas fa-heart hvr-pulse"
+                    [ngClass]="{'text-danger': product.isFavorite, 'text-secondary': !product.isFavorite}"
+                    (click)="toggleFavorite(i)"
+                    style="cursor: pointer;"></i>
+
+                    <i class="fas fa-bookmark ms-3 hvr-pop"
+                    [ngClass]="{'text-primary': product.isSaved, 'text-secondary': !product.isSaved}"
+                    (click)="saveProduct(i)"
+                    style="cursor: pointer;"></i>
+                </div>
+
+                <!-- Immagine del prodotto -->
+                <img [src]="product.image" class="card-img-top img-fluid" alt="Product Image">
+
+                <!-- Corpo della Card -->
+                <div class="card-body">
+                    <h5 class="card-title">{{ product.title }}</h5>
+                    <p class="card-text price">{{ product.price | currency:'EUR' }}</p>
+
+                    <!-- Stelline di Valutazione -->
+                    <div class="rating mb-3">
+                        <ng-container *ngFor="let star of stars; let j = index">
+                            <i class="fas fa-star"
+                            [ngClass]="{'text-warning': j < product.rating, 'text-muted': j >= product.rating}"
+                            (click)="toggleStarRating(i, j + 1)"
+                            style="cursor: pointer;"></i>
+                        </ng-container>
+                        <p class="mt-2">Hai selezionato: {{ product.rating }} stelle</p>
+                    </div>
+
+                    <!-- Descrizione -->
+                    <p class="card-text">{{ product.description }}</p>
+
+                    <!-- Pulsanti -->
+                    <button class="btn hvr-wobble-horizontal" (click)="viewDetails(i)">
+                      PAGA ADESSO
+                    </button>
+                    <hr>
+                    <button class="btn hvr-grow" (click)="addToCart(i)">
+                        <i class="fas fa-shopping-cart"></i> AGGIUNGI AL CARRELLO
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

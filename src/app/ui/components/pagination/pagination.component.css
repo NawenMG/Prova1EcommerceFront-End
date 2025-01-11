@@ -1,0 +1,28 @@
+/* Centrare manualmente senza Bootstrap */
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+/* Personalizzare la paginazione */
+.pagination {
+  list-style: none;
+  padding: 0;
+}
+
+.page-item a {
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin: 0 5px;
+  transition: background-color 0.3s ease;
+  background-color: #800020;
+  color: white;
+}
+
+.page-item a:hover {
+  background-color: #FFD700;
+  color: #333333;
+}

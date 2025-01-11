@@ -1,0 +1,54 @@
+/* Grid Card Style */
+.product-card {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease-in-out;
+  border-radius: 15px;
+  background-color: #F4F4F4;
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+
+/* Immagini rotonde */
+.card-img-top {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  object-fit: cover;
+  height: 200px;
+  width: 100%;
+}
+
+/* Pulsanti e Icone */
+.fa-heart, .fa-bookmark {
+  font-size: 1.8rem;
+  transition: transform 0.3s ease;
+}
+
+.fa-heart:hover, .fa-bookmark:hover {
+  transform: scale(1.2);
+}
+
+/* Stelline */
+.rating i {
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.rating i:hover {
+  transform: scale(1.2);
+}
+
+.btn{
+  background-color: #800020;
+  color: white;
+  border: none;
+}
+
+.btn:hover {
+  background-color: #FFD700;
+  color: #333333;
+  border: none;
+}
