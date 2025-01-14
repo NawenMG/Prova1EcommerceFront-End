@@ -1,0 +1,97 @@
+/* Stile generale del corpo e del contenitore */
+body {
+  background-color: #F4F4F4;
+  color: #333333;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/* Navbar */
+#navbar-example2 {
+  background-color: #F4F4F4;
+  border-bottom: 2px solid #333333;
+  padding: 15px;
+}
+
+.navbar-brand {
+  font-weight: bold;
+  color: #333333;
+}
+
+.nav-link {
+  color: #333333;
+}
+
+.nav-link:hover {
+  color: #800020;
+  text-decoration: underline;
+}
+
+/* Immagine nella navbar */
+img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+/* Bottoni Generali */
+button {
+  background-color: #800020;
+  color: #F4F4F4;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 5px;
+}
+
+/* Effetto Hover per i Bottoni */
+button:hover {
+  background-color: #FFD700;
+  color: #333333;
+}
+
+/* Accordion */
+.accordion {
+  background-color: #F4F4F4;
+  border: none;
+}
+
+.accordion-header {
+  background-color: #F4F4F4;
+}
+
+.accordion-button {
+  background-color: #800020;
+  color: #F4F4F4;
+  font-weight: bold;
+  border: none;
+}
+
+.accordion-button:hover {
+  background-color: #FFD700;
+  color: #333333;
+}
+
+.accordion-button:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+/* Stile per le sezioni di testo */
+.accordion-body {
+  padding: 15px;
+  background-color: #F4F4F4;
+  border-top: 1px solid #333333;
+  color: #333333;
+}
+
+img{
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+}

@@ -5,11 +5,12 @@ import { HomeComponent } from './ui/home/home.component';
 import { HeaderComponent } from './ui/components/header/header.component';
 import { ListProductsComponent } from "./ui/list-products/list-products.component";
 import { DetailsProductComponent } from "./ui/details-product/details-product.component";
+import { ProfileComponent } from "./ui/profile/profile.component";
 
 
 @Component({
   selector: 'app-root',
-  imports: [/* HomeComponent */ /* ListProductsComponent */ DetailsProductComponent],
+  imports: [/* HomeComponent */ /* ListProductsComponent */ /* DetailsProductComponent */ ProfileComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

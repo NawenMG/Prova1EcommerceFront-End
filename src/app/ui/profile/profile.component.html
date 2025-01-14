@@ -1,0 +1,142 @@
+<body>
+  <nav id="navbar-example2" class="navbar bg-body-tertiary px-3 mb-3">
+    <div>
+      <img [src]="defaultImage" alt="immagine" class="hvr-grow">
+      <a class="navbar-brand" href="#" style="padding-left: 10px;">ACCOUNT</a>
+    </div>
+    <ul class="nav nav-pills">
+      <li class="nav-item">
+        <a class="nav-link hvr-float-shadow" href="#scrollspyHeading1">Credenziali</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link hvr-float-shadow" href="#scrollspyHeading2">Ordini</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link hvr-float-shadow" href="#scrollspyHeading3">Wishlist</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link hvr-float-shadow" href="#scrollspyHeading4">Chats</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link hvr-float-shadow" href="#scrollspyHeading5">Resi</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link hvr-float-shadow" href="#scrollspyHeading6">My shop</a>
+      </li>
+      <button type="button" class="btn hvr-wobble-bottom">Logout</button>
+      <button type="button" class="btn hvr-wobble-bottom">Office</button>
+    </ul>
+  </nav>
+
+  <!-- Scrollspy Configurato Correttamente -->
+  <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="0" tabindex="0">
+
+    <!-- Credenziali -->
+    <div class="accordion accordion-flush" id="accordionCredenziali">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCredenziali" aria-expanded="false" aria-controls="collapseCredenziali">
+            <h1>
+              CREDENZIALI
+            </h1>
+          </button>
+        </h2>
+        <div id="collapseCredenziali" class="accordion-collapse collapse" data-bs-parent="#accordionCredenziali">
+          <div class="accordion-body animate__animated animate__bounceIn">
+            Dettagli delle credenziali utente.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ordini -->
+    <div class="accordion accordion-flush" id="accordionOrdini">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOrdini" aria-expanded="false" aria-controls="collapseOrdini">
+            <h1>
+              ORDINI
+            </h1>
+          </button>
+        </h2>
+        <div id="collapseOrdini" class="accordion-collapse collapse" data-bs-parent="#accordionOrdini">
+          <div class="accordion-body animate__animated animate__bounceIn">
+            Dettagli degli ordini effettuati.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Wishlist -->
+    <div class="accordion accordion-flush" id="accordionWishlist">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWishlist" aria-expanded="false" aria-controls="collapseWishlist">
+            <h1>
+              WISHLIST
+            </h1>
+          </button>
+        </h2>
+        <div id="collapseWishlist" class="accordion-collapse collapse" data-bs-parent="#accordionWishlist">
+          <div class="accordion-body animate__animated animate__bounceIn">
+            Dettagli della lista dei desideri.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chats -->
+    <div class="accordion accordion-flush" id="accordionChats">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseChats" aria-expanded="false" aria-controls="collapseChats">
+            <h1>
+              CHATS
+            </h1>
+          </button>
+        </h2>
+        <div id="collapseChats" class="accordion-collapse collapse" data-bs-parent="#accordionChats">
+          <div class="accordion-body animate__animated animate__bounceIn">
+            Dettagli delle conversazioni recenti.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Resi -->
+    <div class="accordion accordion-flush" id="accordionResi">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseResi" aria-expanded="false" aria-controls="collapseResi">
+            <h1>
+              RESI
+            </h1>
+          </button>
+        </h2>
+        <div id="collapseResi" class="accordion-collapse collapse" data-bs-parent="#accordionResi">
+          <div class="accordion-body animate__animated animate__bounceIn ">
+            Dettagli delle richieste di reso.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- My Shop -->
+    <div class="accordion accordion-flush" id="accordionMyShop">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMyShop" aria-expanded="false" aria-controls="collapseMyShop">
+            <h1>
+              MY SHOP
+            </h1>
+          </button>
+        </h2>
+        <div id="collapseMyShop" class="accordion-collapse collapse" data-bs-parent="#accordionMyShop">
+          <div class="accordion-body animate__animated animate__bounceIn">
+            Informazioni sul tuo negozio personale.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
