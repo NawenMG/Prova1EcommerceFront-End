@@ -1,0 +1,50 @@
+<body>
+  <div class="registration-container animate__animated  animate__backInDown hvr-glow">
+    <!-- Titolo -->
+    <h1 class="text-center registration-title">REGISTRAZIONE</h1>
+
+    <form class="registration-form">
+        <div class="row">
+            <!-- Colonna Sinistra -->
+            <div class="col-md-5">
+                <div class="mb-3" *ngFor="let credential of credentials">
+                    <label class="form-label"><strong>Credenziali</strong></label>
+                    <input type="text" class="form-control" placeholder="Inserisci le credenziali">
+                </div>
+            </div>
+
+            <!-- Colonna Destra -->
+            <div class="col-md-5">
+                <div class="mb-3" *ngFor="let info of informations">
+                    <label class="form-label"><strong>Informazioni</strong></label>
+                    <input type="text" class="form-control" placeholder="Inserisci le informazioni">
+                </div>
+            </div>
+
+            <!-- Colonna per l'immagine e le preferenze -->
+            <div class="col-md-2 text-center">
+                <!-- Immagine Profilo -->
+                <div class="profile-pic-container">
+                    <img [src]="defaultImage" alt="Immagine Profilo" class="profile-pic hvr-float">
+                    <button type="button" class="btn profile-btn hvr-bob">INSERISCI FOTO PROFILO</button>
+                </div>
+
+                <!-- Preferenze -->
+                <div class="preferences mt-3">
+                    <h5><strong>PREFERENZE (OPZIONALE)</strong></h5>
+                    <div *ngFor="let preference of preferences">
+                        <input type="checkbox" class="form-check-input">
+                        <label class="form-check-label">{{ preference }}</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottone di Invio -->
+        <div class="text-center mt-4">
+            <button type="submit" class="btn submit-btn hvr-bob">INVIO</button>
+        </div>
+    </form>
+  </div>
+</body>
+

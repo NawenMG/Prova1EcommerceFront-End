@@ -1,0 +1,83 @@
+/* Stile Generale */
+body {
+  background-color: #F4F4F4;
+  color: #333333;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Contenitore principale */
+.registration-container {
+  max-width: 900px;
+  padding: 30px;
+  background-color: white;
+  border: 1px solid #333333;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+img{
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* Titolo */
+.registration-title {
+  font-weight: bold;
+  color: #333333;
+  margin-bottom: 20px;
+}
+
+/* Input Field */
+.form-control {
+  border: 1px solid #333333;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #D0E4FF;
+  color: #333333;
+  font-size: 16px;
+}
+
+/* Immagine Profilo */
+.profile-pic-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-pic {
+  border-radius: 50%;
+  border: 2px solid #333333;
+  margin-bottom: 10px;
+}
+
+/* Stile per i bottoni */
+.submit-btn,
+.profile-btn {
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  background-color: #800020;
+  color: #F4F4F4;
+  border: none;
+  cursor: pointer;
+}
+
+/* Effetto Hover per i bottoni */
+.submit-btn:hover,
+.profile-btn:hover {
+  background-color: #FFD700;
+  color: #333333;
+}
+
+/* Checkbox Stile */
+.preferences .form-check-input {
+  margin-right: 10px;
+}

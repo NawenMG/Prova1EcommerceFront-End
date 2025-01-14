@@ -7,11 +7,12 @@ import { ListProductsComponent } from "./ui/list-products/list-products.componen
 import { DetailsProductComponent } from "./ui/details-product/details-product.component";
 import { ProfileComponent } from "./ui/profile/profile.component";
 import { LoginComponent } from "./ui/login/login.component";
+import { RegistrazioneComponent } from "./ui/registrazione/registrazione.component";
 
 
 @Component({
   selector: 'app-root',
-  imports: [/* HomeComponent */ /* ListProductsComponent */ /* DetailsProductComponent */ /* ProfileComponent */ LoginComponent],
+  imports: [/* HomeComponent */ /* ListProductsComponent */ /* DetailsProductComponent */ /* ProfileComponent */ /* LoginComponent */ RegistrazioneComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
