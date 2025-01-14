@@ -1,0 +1,60 @@
+/* Stile generale */
+body {
+  background-color: #F4F4F4;
+  color: #333333;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;    /* Centra orizzontalmente */
+  align-items: center;        /* Centra verticalmente */
+}
+
+/* Contenitore del form */
+.login-container {
+  max-width: 400px;
+  margin: 100px auto;
+  padding: 30px;
+  background-color: white;
+  border: 1px solid #333333;
+  border-radius: 10px;
+}
+
+/* Titolo */
+.login-title {
+  font-weight: bold;
+  color: #333333;
+  text-align: center;
+}
+
+/* Input field */
+.form-control {
+  border: 1px solid #333333;
+  border-radius: 5px;
+  padding: 10px;
+  color: #333333;
+  font-size: 16px;
+}
+
+/* Bottoni - Stile Unificato */
+.submit-btn,
+.forgot-password-btn,
+.new-account-btn {
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  background-color: #800020;
+  color: #F4F4F4;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Corretto Hover per tutti i bottoni */
+.submit-btn:hover,
+.forgot-password-btn:hover,
+.new-account-btn:hover {
+  background-color: #FFD700;
+  color: #333333;
+}

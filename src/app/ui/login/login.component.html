@@ -1,0 +1,36 @@
+<body>
+  <div class="login-container animate__animated  animate__backInDown hvr-glow">
+    <form class="login-form">
+        <!-- Titolo -->
+        <h1 class="text-center login-title">LOGIN</h1>
+
+        <!-- Campo Email -->
+        <div class="mb-3">
+            <label for="email" class="form-label"> <strong> Email </strong> </label>
+            <input type="email" id="email" class="form-control" [(ngModel)]="email" placeholder="Inserisci la tua email">
+        </div>
+
+        <!-- Campo Password -->
+        <div class="mb-3">
+            <label for="password" class="form-label"> <strong> Password </strong> </label>
+            <input type="password" id="password" class="form-control" [(ngModel)]="password" placeholder="Inserisci la tua password">
+        </div>
+
+        <!-- Link per Password Dimenticata -->
+        <div class="text-center">
+            <button type="button" class="btn forgot-password-btn" (click)="forgotPassword()">Email/Password dimenticata</button>
+        </div>
+
+        <!-- Bottone di Invio -->
+        <div class="text-center mt-3">
+            <button type="submit" class="btn submit-btn" (click)="submitLogin()">INVIO</button>
+        </div>
+
+        <!-- Crea un nuovo account -->
+        <div class="text-center mt-3">
+            <button type="button" class="btn new-account-btn" (click)="createAccount()">CREA UN NUOVO ACCOUNT</button>
+        </div>
+    </form>
+  </div>
+</body>
+

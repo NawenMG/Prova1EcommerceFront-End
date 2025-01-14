@@ -6,11 +6,12 @@ import { HeaderComponent } from './ui/components/header/header.component';
 import { ListProductsComponent } from "./ui/list-products/list-products.component";
 import { DetailsProductComponent } from "./ui/details-product/details-product.component";
 import { ProfileComponent } from "./ui/profile/profile.component";
+import { LoginComponent } from "./ui/login/login.component";
 
 
 @Component({
   selector: 'app-root',
-  imports: [/* HomeComponent */ /* ListProductsComponent */ /* DetailsProductComponent */ ProfileComponent],
+  imports: [/* HomeComponent */ /* ListProductsComponent */ /* DetailsProductComponent */ /* ProfileComponent */ LoginComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
