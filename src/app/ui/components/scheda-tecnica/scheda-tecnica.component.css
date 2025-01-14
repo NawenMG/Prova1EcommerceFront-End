@@ -1,0 +1,21 @@
+#scheda-tecnica{
+  border: 2px solid #4B4B4B;
+  margin-top: 10px;
+  padding-left: 10px;
+  color: #333333;
+  background-color: #F4F4F4;
+}
+
+button{
+  background-color: #800020 !important;
+  color: #F4F4F4 !important;
+  border: none;
+}
+
+button:hover{
+  background-color: #FFD700 !important;
+  color: #333333 !important;
+  border: none;
+}
+
+

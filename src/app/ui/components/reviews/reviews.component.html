@@ -1,0 +1,35 @@
+<div class="reviews-container">
+  <!-- Sezione Rating a Sinistra -->
+  <div class="rating-section">
+    <h2>RATING</h2>
+    <div *ngFor="let rating of ratings">
+      <div class="stars" id="stars-rating">
+        <span *ngFor="let star of generateStars(rating.stars)">
+          <i class="fas fa-star"></i> <!-- Font Awesome Icon -->
+        </span>
+      </div>
+      <div class="percentage">{{ rating.percentage }}%</div>
+    </div>
+  </div>
+
+  <!-- Sezione Recensioni a Destra -->
+  <div class="reviews-section">
+    <h2>RECENSIONI</h2>
+    <div *ngFor="let review of reviews.slice(0, 2)">
+      <h3><strong>NOME</strong></h3>
+      <div class="stars">
+        <span *ngFor="let star of generateStars(review.stars)">
+          <i class="fas fa-star"></i> <!-- Font Awesome Icon -->
+        </span>
+      </div>
+      <h4><strong>TITOLO</strong></h4>
+      <p>{{ review.content }}</p>
+    </div>
+
+    <!-- Bottoni di Azione -->
+    <div class="buttons-container">
+      <button class="btn add-review" (click)="addReview()">AGGIUNGI RECENSIONE</button>
+      <button class="btn see-all" (click)="seeAllReviews()">VEDI TUTTO</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,64 @@
+/* Container principale per layout diviso */
+.product-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Carousel */
+.carousel img {
+  border-radius: 20px;
+  object-fit: cover;
+  max-height: 400px;
+}
+
+/* Dettagli del Prodotto */
+.product-details {
+  flex: 1;
+  text-align: left;
+}
+
+.product-title {
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+/* Icone preferiti e wishlist */
+.icons {
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+/* Recensioni */
+.rating i {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Pulsante Prezzo */
+.price-button {
+  width: 100%;
+  background-color: #17a2b8;
+  border: none;
+  border-radius: 12px;
+  font-size: 20px;
+  padding: 10px;
+  text-transform: uppercase;
+}
+
+/* Quantità */
+.quantity input {
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+/* Descrizione */
+.description {
+  font-size: 1rem;
+  color: #555;
+}
+
+
