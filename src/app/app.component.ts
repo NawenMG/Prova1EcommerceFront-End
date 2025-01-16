@@ -8,11 +8,12 @@ import { DetailsProductComponent } from "./ui/details-product/details-product.co
 import { ProfileComponent } from "./ui/profile/profile.component";
 import { LoginComponent } from "./ui/login/login.component";
 import { RegistrazioneComponent } from "./ui/registrazione/registrazione.component";
+import { VenditaProdottiComponent } from "./ui/vendita-prodotti/vendita-prodotti.component";
 
 
 @Component({
   selector: 'app-root',
-  imports: [/* HomeComponent */ /* ListProductsComponent */ /* DetailsProductComponent */ /* ProfileComponent */ /* LoginComponent */ RegistrazioneComponent],
+  imports: [/* HomeComponent */ /* ListProductsComponent */ /* DetailsProductComponent */ /* ProfileComponent */ /* LoginComponent */ /* RegistrazioneComponent */  VenditaProdottiComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

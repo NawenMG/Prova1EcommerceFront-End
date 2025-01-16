@@ -1,0 +1,119 @@
+/* Stile Generale */
+body {
+  background-color: #F4F4F4;
+  color: #333333;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh; /* Usa min-height invece di height */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Allinea il contenuto in alto */
+}
+
+#info{
+  margin-left: 130px;
+}
+
+/* Contenitore del form */
+.sell-product-container {
+  max-width: 900px;
+  padding: 30px;
+  background-color: white;
+  border: 1px solid #333333;
+  border-radius: 15px;
+  margin-top: 10px;
+}
+
+/* Titolo */
+.sell-title {
+  font-weight: bold;
+  color: #333333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Input Field */
+.form-control {
+  border: 1px solid #333333;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #D0E4FF;
+  color: #333333;
+  font-size: 16px;
+}
+
+/* Immagine Profilo */
+.profile-pic-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-pic {
+  border-radius: 50%;
+  border: 2px solid #333333;
+  margin-bottom: 10px;
+}
+
+/* Bottoni Stile Generale */
+.submit-btn,
+.profile-btn,
+.add-row-btn {
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  background-color: #800020;
+  color: #F4F4F4;
+  border: none;
+  cursor: pointer;
+}
+
+/* Effetto Hover per i bottoni */
+.submit-btn:hover,
+.profile-btn:hover,
+.add-row-btn:hover {
+  background-color: #FFD700;
+  color: #333333;
+}
+
+/* Allinea la tabella al form */
+.product-table {
+  width: 100%; /* Assicura che la tabella occupi tutta la larghezza disponibile */
+  padding: 0 15px; /* Uniforma lo spazio interno con il resto del form */
+  box-sizing: border-box; /* Considera padding nel calcolo delle dimensioni */
+}
+
+/* Stile per gli input della tabella */
+.product-table .form-control.wide-input {
+  width: 100%; /* Assicura che ogni input occupi l'intera cella */
+  padding: 8px; /* Aggiungi più spazio interno */
+  font-size: 16px; /* Dimensione del testo leggermente più grande */
+  border-radius: 4px; /* Angoli arrotondati */
+  background-color: #D0E4FF; /* Sfondo leggero per uniformità */
+  border: 1px solid #333333; /* Colore del bordo */
+}
+
+/* Rimuove lo spazio e il margine della tabella */
+.table {
+  margin: 0; /* Rimuove margine esterno */
+  border-collapse: collapse; /* Rimuove spazio tra le celle */
+  width: 100%; /* Larghezza totale */
+}
+
+/* Aggiungi bordi visibili per tutte le celle */
+.table-bordered td, .table-bordered th {
+  border: 1px solid #333333;
+}
+
+
+thead {
+  font-weight: bold;
+}
+
+img{
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+}

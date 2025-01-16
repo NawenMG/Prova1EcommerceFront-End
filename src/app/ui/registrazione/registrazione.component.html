@@ -6,7 +6,7 @@
     <form class="registration-form">
         <div class="row">
             <!-- Colonna Sinistra -->
-            <div class="col-md-5">
+            <div class="col-md-5 animate__animated animate__backInLeft">
                 <div class="mb-3" *ngFor="let credential of credentials">
                     <label class="form-label"><strong>Credenziali</strong></label>
                     <input type="text" class="form-control" placeholder="Inserisci le credenziali">
@@ -14,7 +14,7 @@
             </div>
 
             <!-- Colonna Destra -->
-            <div class="col-md-5">
+            <div class="col-md-5 animate__animated animate__backInRight">
                 <div class="mb-3" *ngFor="let info of informations">
                     <label class="form-label"><strong>Informazioni</strong></label>
                     <input type="text" class="form-control" placeholder="Inserisci le informazioni">
@@ -22,7 +22,7 @@
             </div>
 
             <!-- Colonna per l'immagine e le preferenze -->
-            <div class="col-md-2 text-center">
+            <div class="col-md-2 text-center animate__animated animate__backInRight">
                 <!-- Immagine Profilo -->
                 <div class="profile-pic-container">
                     <img [src]="defaultImage" alt="Immagine Profilo" class="profile-pic hvr-float">
