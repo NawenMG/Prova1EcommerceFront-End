@@ -1,0 +1,53 @@
+<body>
+  <app-header></app-header>
+
+  <!-- Seconda Tabella -->
+  <div class="animate__animated animate__bounceInLeft">
+    <h1>TRANSIZIONI</h1>
+  </div>
+
+  <div class="table-container hvr-glow animate__animated animate__slideInDown">
+    <table class="table table-dark table-striped text-center">
+      <thead>
+        <tr>
+          <th>Download</th>
+          <th>#</th>
+          <th>Info</th>
+          <th>Info</th>
+          <th>Info</th>
+          <th>Segnala</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let row of table2.visibleRows; let i = index">
+          <td>
+            <i
+              class="fas fa-download"
+              [ngClass]="{ 'text-danger': row.shieldClicked }"
+              (click)="toggleIcon(row, 'shieldClicked', 'table2')"
+            ></i>
+
+          </td>
+          <td><span class="badge bg-primary">{{ row.id }}</span></td>
+          <td>{{ row.info1 }}</td>
+          <td>{{ row.info2 }}</td>
+          <td>{{ row.info3 }}</td>
+          <td>
+            <i
+              class="fas fa-exclamation-triangle"
+              [ngClass]="{ 'text-danger': row.warningClicked }"
+              (click)="toggleIcon(row, 'warningClicked', 'table2')"
+            ></i>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="text-center mt-3">
+      <button class="btn hvr-wobble-top me-2" (click)="showAllRows('table2')">+</button>
+      <button class="btn hvr-wobble-top" (click)="showInitialRows('table2')">-</button>
+    </div>
+  </div>
+
+  <app-footer></app-footer>
+</body>
