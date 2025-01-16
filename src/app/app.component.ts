@@ -12,11 +12,12 @@ import { VenditaProdottiComponent } from "./ui/vendita-prodotti/vendita-prodotti
 import { AdminUiComponent } from "./ui/admin-ui/admin-ui.component";
 import { DeliveryUiComponent } from "./ui/delivery-ui/delivery-ui.component";
 import { TransizioniUiComponent } from './ui/transizioni-ui/transizioni-ui.component';
+import { ControlleruiComponent } from "./ui/controllerui/controllerui.component";
 
 
 @Component({
   selector: 'app-root',
-  imports: [/* HomeComponent */ /* ListProductsComponent */ /* DetailsProductComponent */ /* ProfileComponent */ /* LoginComponent */ /* RegistrazioneComponent */ /* VenditaProdottiComponent */ /*  AdminUiComponent */  /* DeliveryUiComponent */ TransizioniUiComponent],
+  imports: [/* HomeComponent */ /* ListProductsComponent */ /* DetailsProductComponent */ /* ProfileComponent */ /* LoginComponent */ /* RegistrazioneComponent */ /* VenditaProdottiComponent */ /*  AdminUiComponent */ /* DeliveryUiComponent */ /* TransizioniUiComponent */ ControlleruiComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
