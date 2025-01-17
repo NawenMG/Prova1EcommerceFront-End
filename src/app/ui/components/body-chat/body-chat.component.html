@@ -1,0 +1,42 @@
+<div class="chat-body d-flex flex-column">
+  <!-- Messaggi -->
+  <div class="messages-container flex-grow-1 px-3 py-2">
+    <div
+      *ngFor="let message of messages"
+      class="message"
+      [ngStyle]="{
+        'align-self': message.isSent ? 'flex-end' : 'flex-start',
+        'margin-left': !message.isSent ? '10px' : '1250px' ,
+        'text-align': message.isSent ? 'right' : 'left'
+      }"
+    >
+      <div
+        class="message-content animate__animated animate__backInUp"
+        [ngStyle]="{
+          'background-color': message.isSent ? '#800020' : '#FFD700',
+          'color': message.isSent ? 'white' : '#333333'
+        }"
+      >
+        <p>{{ message.text }}</p>
+        <div *ngIf="message.isSent" class="message-status">
+          <i class="fas fa-check-double"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Barra di invio messaggi -->
+  <div class="message-input d-flex align-items-center px-3 py-2">
+    <input
+      type="text"
+      class="form-control flex-grow-1"
+      placeholder="Message"
+      [(ngModel)]="newMessage"
+    />
+    <i class="fas fa-paperclip mx-3 hvr-push"></i>
+    <i
+      class="fas fa-paper-plane hvr-push"
+      (click)="sendMessage()"
+    ></i>
+  </div>
+</div>

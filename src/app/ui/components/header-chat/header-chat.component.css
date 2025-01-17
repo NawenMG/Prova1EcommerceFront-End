@@ -1,0 +1,39 @@
+/* Contenitore principale dell'header */
+.chat-header {
+  background-color: #D9F7FF;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #cccccc;
+}
+
+/* Icona per tornare indietro */
+.back-icon i {
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #333333;
+}
+
+/* Immagine del profilo */
+.profile-pic img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border: 2px solid #333333;
+}
+
+/* Nome Utente */
+.user-name h5 {
+  color: #333333;
+  font-weight: bold;
+}
+
+/* Icone di azione */
+.action-icons i {
+  font-size: 1.3rem;
+  color: #333333;
+  cursor: pointer;
+}
+
+.action-icons i:hover {
+  color: #0056b3;
+}

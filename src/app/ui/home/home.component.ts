@@ -14,17 +14,8 @@ import { FooterComponent } from "../components/footer/footer.component";
   styleUrls: ['./home.component.css'],
   imports: [HeaderComponent, DropdownSeriesComponent, CardsSeriesComponent, SliderOrizzontaleComponent, FooterComponent]
 })
-export class HomeComponent implements AfterViewInit {
+export class HomeComponent {
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
 
-  ngAfterViewInit(): void {
-    if (isPlatformBrowser(this.platformId)) {
-      AOS.init({
-        duration: 1200,
-        once: false,
-        easing: 'ease-in-out'
-      });
-    }
-  }
+
 }

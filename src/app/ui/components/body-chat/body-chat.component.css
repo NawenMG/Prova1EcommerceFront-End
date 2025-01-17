@@ -1,0 +1,55 @@
+/* Stile principale del body della chat */
+.chat-body {
+  background-color: #f4f4f4;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* Contenitore dei messaggi */
+.messages-container {
+  overflow-y: auto;
+}
+
+/* Stile del contenuto del messaggio */
+.message-content {
+  padding: 10px;
+  border-radius: 15px;
+  font-weight: bold;
+  max-width: 250px;
+  word-wrap: break-word;
+  position: relative;
+  margin-top: 10px;
+  box-shadow: 5px 5px 2.5px gray;
+
+}
+
+/* Stile per l'icona di stato del messaggio */
+.message-status {
+  position: absolute;
+  bottom: 1px;
+  right: 10px;
+  font-size: 0.8rem;
+  color: #333333;
+}
+
+/* Input messaggio */
+.message-input {
+  background-color: #D9F7FF;
+  border-top: 1px solid #dddddd;
+}
+
+.message-input input {
+  border-radius: 20px;
+  border: 1px solid #ddd;
+  padding: 10px 15px;
+}
+
+.message-input i {
+  cursor: pointer;
+  color: #333333;
+}
+
+.message-input i:hover {
+  color: #007bff;
+}
