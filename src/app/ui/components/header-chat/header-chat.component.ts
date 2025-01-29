@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-header-chat',
-  imports: [],
+  imports: [RouterOutlet],
   templateUrl: './header-chat.component.html',
   styleUrl: './header-chat.component.css',
   standalone: true

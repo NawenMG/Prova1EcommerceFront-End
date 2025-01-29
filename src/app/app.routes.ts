@@ -14,43 +14,55 @@ import { DeliveryUiComponent } from './ui/delivery-ui/delivery-ui.component';
 
 export const routes: Routes = [
   {
-    path: '', component: HomeComponent
+    path: '', // Percorso principale (homepage)
+    component: HomeComponent
   },
   {
-    path: '**', component: HomeComponent
+    path: 'list', // Lista dei prodotti
+    component: ListProductsComponent
   },
   {
-    path: '/list', component: ListProductsComponent
+    path: 'product', // Dettagli del prodotto
+    component: DetailsProductComponent
   },
   {
-    path: '/product', component: DetailsProductComponent
+    path: 'profile', // Profilo utente
+    component: ProfileComponent
   },
   {
-    path: '/profile', component: ProfileComponent
+    path: 'registrazione', // Registrazione
+    component: RegistrazioneComponent
   },
   {
-    path: '/registrazione', component: RegistrazioneComponent
+    path: 'login', // Login
+    component: LoginComponent
   },
   {
-    path: '/login', component: LoginComponent
+    path: 'vendita', // Vendita di prodotti
+    component: VenditaProdottiComponent
   },
   {
-    path: '/vendita', component: VenditaProdottiComponent
+    path: 'chat', // Chat
+    component: ChatComponent
   },
   {
-    path: '/chat', component: ChatComponent
+    path: 'admin', // Interfaccia Admin
+    component: AdminUiComponent
   },
   {
-    path: '/admin', component: AdminUiComponent
+    path: 'controller', // Controller UI
+    component: ControlleruiComponent
   },
   {
-    path: '/controller', component: ControlleruiComponent
+    path: 'transizioni', // Transizioni UI
+    component: TransizioniUiComponent
   },
   {
-    path: '/transizioni', component: TransizioniUiComponent
+    path: 'delivery', // Consegna UI
+    component: DeliveryUiComponent
   },
   {
-    path: '/delivery', component: DeliveryUiComponent
+    path: '**', // Wildcard per route non trovate
+    component: HomeComponent // Puoi sostituire con un componente "Not Found"
   }
-
 ];

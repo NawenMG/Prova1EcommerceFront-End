@@ -1,5 +1,22 @@
-::selection{
-  background-color: #FFD700;
-  color: #333333;
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 15px;
+  background-color: #f4f4f4;
+  padding: 10px;
+}
 
+nav a {
+  text-decoration: none;
+  color: #333;
+}
+
+nav a.active {
+  font-weight: bold;
+  color: #007bff;
+}
+
+router-outlet {
+  margin-top: 20px;
 }
