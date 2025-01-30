@@ -1,8 +1,8 @@
 // store/setting-site.state.ts
 export interface SettingSite {
-  tema: string;
+  //tema: string;
   lingua: string;
-  notifiche: boolean;
+  //notifiche: boolean;
 }
 
 export interface SettingSiteState {

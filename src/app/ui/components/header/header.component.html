@@ -4,60 +4,174 @@
 
 <header class="header container-fluid py-3 d-flex justify-content-between align-items-center flex-nowrap animate__animated animate__fadeInDown">
 
-    <!-- Logo con animazione Hover.css -->
-    <div class="logo d-flex align-items-center hvr-buzz-out" id="logo"
-         (mouseenter)="animateLogo()"
-         aria-label="Home">
-        <i class="fas fa-store fa-2x me-2"></i>
-        <h4 class="m-0">MyStore</h4>
-    </div>
+  <!-- Logo con animazione Hover.css -->
+  <div class="logo d-flex align-items-center hvr-buzz-out" id="logo"
+       (mouseenter)="animateLogo()"
+       aria-label="Home">
+      <i class="fas fa-store fa-2x me-2"></i>
+      <h4 class="m-0">MyStore</h4>
+  </div>
 
-    <!-- Dropdown per Lingua con animazione Hover.css -->
-    <div class="dropdown-container d-flex flex-column align-items-start" id="select-languages">
-        <select id="language" class="form-select language-selector hvr-float"
-                [(ngModel)]="selectedLanguage"
-                style="width: 70px;"
-                (change)="changeLanguage()">
-            <option value="it">Ita</option>
-            <option value="en">Eng</option>
-            <option value="es">Esp</option>
-        </select>
-    </div>
+  <!-- Dropdown per Lingua con animazione Hover.css -->
+  <div class="dropdown-container d-flex flex-column align-items-start" id="select-languages">
+      <select id="language" class="form-select language-selector hvr-float"
+              [(ngModel)]="selectedLanguage"
+              style="width: 70px;"
+              (change)="changeLanguage()">
+          <option value="it">Ita</option>
+          <option value="en">Eng</option>
+          <option value="es">Esp</option>
+      </select>
+  </div>
 
-    <!-- Barra di Ricerca con animazione Hover.css -->
-    <div class="search-container d-flex align-items-center flex-grow-1 mx-3 hvr-glow" id="search-bar">
-        <input
-            id="search-bar-input"
-            type="text"
-            class="form-control search-bar"
-            placeholder="Cerca prodotti..."
-            [(ngModel)]="searchQuery"
-        />
-        <button class="btn search-button hvr-float-shadow" (click)="searchProducts()" aria-label="Cerca" style="height: 45px;">
-            <i class="fas fa-search"></i>
-        </button>
-    </div>
+  <!-- Barra di Ricerca con animazione Hover.css -->
+  <div class="search-container d-flex align-items-center flex-grow-1 mx-3 hvr-glow" id="search-bar">
+      <input
+          id="search-bar-input"
+          type="text"
+          class="form-control search-bar"
+          placeholder="Cerca prodotti..."
+          [(ngModel)]="searchQuery"
+      />
+      <button class="btn search-button hvr-float-shadow" (click)="searchProducts()" aria-label="Cerca" style="height: 45px;">
+          <i class="fas fa-search"></i>
+      </button>
+  </div>
 
-    <!-- Pulsante Carrello con animazione -->
-    <button class="btn cart-button d-flex align-items-center hvr-bob" aria-label="Visualizza carrello" id="cart">
-        <i class="fas fa-shopping-cart me-2"></i> Carrello
-    </button>
+  <!-- Pulsante Carrello con animazione -->
+  <button class="btn cart-button d-flex align-items-center hvr-bob" aria-label="Visualizza carrello" id="cart">
+      <i class="fas fa-shopping-cart me-2"></i> Carrello
+  </button>
 
-    <!-- Pulsante Login/Logout con Hover.css e Animate.css -->
-    <button
-        class="btn login-button animate__animated animate__pulse" id="authenticated"
-        [ngClass]="{'logged-in': isAuthenticated, 'logged-out': !isAuthenticated}"
-        (click)="toggleLogin()"
-        [attr.aria-label]="isAuthenticated ? 'Logout' : 'Login'">
+  <!-- Pulsante Login/Logout con Hover.css e Animate.css -->
+  <button
+      class="btn login-button animate__animated animate__pulse" id="authenticated"
+      [ngClass]="{'logged-in': isAuthenticated, 'logged-out': !isAuthenticated}"
+      (click)="toggleLogin()"
+      [attr.aria-label]="isAuthenticated ? 'Logout' : 'Login'">
 
-        <!-- Icona circolare con condizione -->
-        <i class="fas"
-           [class.fa-user-circle]="isAuthenticated"
-           [class.fa-sign-in-alt]="!isAuthenticated">
-        </i>
+      <!-- Icona circolare con condizione -->
+      <i class="fas"
+         [class.fa-user-circle]="isAuthenticated"
+         [class.fa-sign-in-alt]="!isAuthenticated">
+      </i>
 
-        <!-- Testo solo quando l'utente non è autenticato -->
-        <span *ngIf="!isAuthenticated">Login</span>
-    </button>
+      <!-- Testo solo quando l'utente non è autenticato -->
+      <span *ngIf="!isAuthenticated">Login</span>
+  </button>
 
 </header>
+
+
+
+<!--
+
+<header class="header container-fluid py-3 d-flex justify-content-between align-items-center flex-nowrap animate__animated animate__fadeInDown">
+
+  <div class="logo d-flex align-items-center hvr-buzz-out" id="logo"
+       (mouseenter)="animateLogo()"
+       aria-label="Home">
+      <i class="fas fa-store fa-2x me-2"></i>
+      <h4 class="m-0">MyStore</h4>
+  </div>
+
+  <div class="dropdown-container d-flex flex-column align-items-start" id="select-languages">
+      <select id="language" class="form-select language-selector hvr-float"
+              [(ngModel)]="selectedLanguage"
+              style="width: 70px;"
+              (change)="changeLanguage()">
+          <option value="it">Ita</option>
+          <option value="en">Eng</option>
+          <option value="es">Esp</option>
+      </select>
+  </div>
+
+  <div class="search-container position-relative d-flex align-items-center flex-grow-1 mx-3 hvr-glow" id="search-bar">
+      <input
+          id="search-bar-input"
+          type="text"
+          class="form-control search-bar"
+          placeholder="Cerca prodotti..."
+          [(ngModel)]="searchQuery"
+          (focus)="showCronologiaDropdown = true"
+          (blur)="hideCronologiaDropdownWithDelay()"
+      />
+      <button class="btn search-button hvr-float-shadow" (click)="searchProducts()" aria-label="Cerca" style="height: 45px;">
+          <i class="fas fa-search"></i>
+      </button>
+
+      <div *ngIf="showCronologiaDropdown" class="dropdown-menu show position-absolute w-100 shadow bg-white p-2">
+          <div *ngIf="cronologia$ | async as cronologia">
+              <div *ngIf="cronologia.prodotti.length > 0; else noCronologia">
+                  <div *ngFor="let prodotto of cronologia.prodotti" class="dropdown-item d-flex justify-content-between align-items-center">
+                      <span (click)="selectFromCronologia(prodotto.nome)" class="text-primary cursor-pointer">{{ prodotto.nome }}</span>
+                      <i class="fas fa-times text-danger cursor-pointer" (click)="eliminaProdottoCronologia(prodotto.id)"></i>
+                  </div>
+                  <div class="text-end mt-2">
+                      <button class="btn btn-sm btn-outline-danger" (click)="eliminaTuttaCronologia()">Svuota Cronologia</button>
+                  </div>
+              </div>
+          </div>
+          <ng-template #noCronologia>
+              <p class="text-muted text-center">Nessuna ricerca recente</p>
+          </ng-template>
+      </div>
+  </div>
+
+  <button class="btn cart-button d-flex align-items-center hvr-bob" aria-label="Visualizza carrello" id="cart" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas">
+      <i class="fas fa-shopping-cart me-2"></i>
+      <span>Carrello</span>
+      <span class="badge bg-danger ms-2" *ngIf="carrello$ | async as carrello">{{ carrello.prodotti.length }}</span>
+  </button>
+
+  <button
+      class="btn login-button animate__animated animate__pulse" id="authenticated"
+      [ngClass]="{'logged-in': isAuthenticated, 'logged-out': !isAuthenticated}"
+      (click)="toggleLogin()"
+      [attr.aria-label]="isAuthenticated ? 'Logout' : 'Login'">
+
+      <i class="fas"
+         [class.fa-user-circle]="isAuthenticated"
+         [class.fa-sign-in-alt]="!isAuthenticated">
+      </i>
+
+      <span *ngIf="!isAuthenticated">Login</span>
+  </button>
+
+</header>
+
+<div class="offcanvas offcanvas-end" tabindex="-1" id="cartOffcanvas" aria-labelledby="cartOffcanvasLabel">
+  <div class="offcanvas-header">
+    <h5 id="cartOffcanvasLabel">Il tuo Carrello</h5>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Chiudi"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div *ngIf="carrello$ | async as carrello">
+      <div *ngIf="carrello.prodotti.length > 0; else carrelloVuoto">
+        <ul class="list-group">
+          <li *ngFor="let prodotto of carrello.prodotti" class="list-group-item d-flex justify-content-between align-items-center">
+            <div>
+              <strong>{{ prodotto.nome }}</strong>
+              <p class="mb-0 text-muted">Prezzo: €{{ prodotto.prezzo }} | Quantità: {{ prodotto.quantita }}</p>
+            </div>
+            <button class="btn btn-sm btn-outline-danger" (click)="rimuoviDalCarrello(prodotto.id)">
+              <i class="fas fa-trash-alt"></i>
+            </button>
+          </li>
+        </ul>
+        <div class="mt-3 text-end">
+          <strong>Totale: €{{ getTotal(carrello.prodotti) }}</strong>
+        </div>
+        <div class="text-end mt-2">
+          <button class="btn btn-outline-danger" (click)="svuotaCarrello()">Svuota Carrello</button>
+        </div>
+      </div>
+    </div>
+    <ng-template #carrelloVuoto>
+      <p class="text-muted text-center">Il carrello è vuoto</p>
+    </ng-template>
+  </div>
+</div>
+
+
+-->

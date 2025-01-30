@@ -165,3 +165,57 @@
       </button>
   </div>
 </div>
+
+
+<!--
+<div class="container mt-4">
+  <h2 class="mb-4">I Nostri Prodotti</h2>
+
+  <div class="row">
+    <div class="col-md-6" *ngIf="prodotti$ | async as prodotti">
+
+      <div id="carouselProdotti" class="carousel slide" data-bs-ride="carousel">
+
+        <div class="carousel-indicators">
+          <button *ngFor="let prodotto of prodotti; let j = index"
+                  type="button"
+                  data-bs-target="#carouselProdotti"
+                  [attr.data-bs-slide-to]="j"
+                  [class.active]="j === 0">
+          </button>
+        </div>
+
+        <div class="carousel-inner">
+          <div *ngFor="let prodotto of prodotti; let isFirst = first"
+               class="carousel-item"
+               [ngClass]="{'active': isFirst}">
+
+            <img [src]="defaultImage" class="d-block w-100" alt="{{ prodotto.nome }}">
+
+            <div class="carousel-caption d-none d-md-block">
+              <h5>{{ prodotto.nome }}</h5>
+              <p>Prezzo: €{{ prodotto.prezzo }}</p>
+              <button class="btn btn-primary" (click)="navigateToProduct(prodotto)">
+                Vedi Dettagli
+              </button>
+            </div>
+
+          </div>
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselProdotti" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselProdotti" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+-->

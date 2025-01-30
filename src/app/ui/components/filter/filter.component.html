@@ -1,18 +1,62 @@
 <!-- Container principale con Flexbox per la disposizione -->
 <div class="filter-container d-flex justify-content-between align-items-center">
-    <!-- Titolo H1 -->
-    <h1 class="title animate__animated animate__fadeInLeft">RISULTATI</h1>
+  <!-- Titolo H1 -->
+  <h1 class="title animate__animated animate__fadeInLeft">RISULTATI</h1>
 
-    <!-- Pulsante Dropdown con Icona FontAwesome -->
-    <div class="dropdown">
-        <button class="btn dropdown-toggle filter-button hvr-float-shadow" type="button" id="dropdownMenuButton"
-            data-bs-toggle="dropdown" aria-expanded="false">
-            <i class="fas fa-filter"></i> Filtri
-        </button>
-        <ul class="dropdown-menu animate__animated animate__fadeIn" aria-labelledby="dropdownMenuButton">
-            <li><a class="dropdown-item" href="#" (click)="applyFilter('data')">Per Data</a></li>
-            <li><a class="dropdown-item" href="#" (click)="applyFilter('nome')">Per Nome</a></li>
-            <li><a class="dropdown-item" href="#" (click)="applyFilter('prezzo')">Per Prezzo</a></li>
-        </ul>
-    </div>
+  <!-- Pulsante Dropdown con Icona FontAwesome -->
+  <div class="dropdown">
+      <button class="btn dropdown-toggle filter-button hvr-float-shadow" type="button" id="dropdownMenuButton"
+          data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="fas fa-filter"></i> Filtri
+      </button>
+
+      <ul class="dropdown-menu animate__animated animate__fadeIn" aria-labelledby="dropdownMenuButton">
+          <!-- Ordinamento -->
+          <li><h6 class="dropdown-header">Ordina per</h6></li>
+          <li><a class="dropdown-item" (click)="filtri.ordine = 'data'; applicaFiltri()">Data</a></li>
+          <li><a class="dropdown-item" (click)="filtri.ordine = 'nome'; applicaFiltri()">Nome</a></li>
+          <li><a class="dropdown-item" (click)="filtri.ordine = 'prezzo'; applicaFiltri()">Prezzo</a></li>
+
+          <li><hr class="dropdown-divider"></li>
+
+          <!-- Categoria -->
+          <li><h6 class="dropdown-header">Categoria</h6></li>
+          <li *ngFor="let categoria of categorie">
+              <a class="dropdown-item" (click)="filtri.categoria = categoria; applicaFiltri()">{{ categoria }}</a>
+          </li>
+
+          <li><hr class="dropdown-divider"></li>
+
+          <!-- Brand -->
+          <li><h6 class="dropdown-header">Brand</h6></li>
+          <li *ngFor="let brand of brands">
+              <a class="dropdown-item" (click)="filtri.brand = brand; applicaFiltri()">{{ brand }}</a>
+          </li>
+
+          <li><hr class="dropdown-divider"></li>
+
+          <!-- Prezzo Min/Max -->
+          <li><h6 class="dropdown-header">Prezzo</h6></li>
+          <li class="px-3">
+              <input type="number" class="form-control mb-2" placeholder="Prezzo Min" [(ngModel)]="filtri.minPrice" (change)="applicaFiltri()">
+              <input type="number" class="form-control" placeholder="Prezzo Max" [(ngModel)]="filtri.maxPrice" (change)="applicaFiltri()">
+          </li>
+
+          <li><hr class="dropdown-divider"></li>
+
+          <!-- Numero di Recensioni -->
+          <li><h6 class="dropdown-header">Numero di Recensioni</h6></li>
+          <li class="px-3">
+              <input type="number" class="form-control" placeholder="Min. recensioni" [(ngModel)]="filtri.numeroDiRecensioni" (change)="applicaFiltri()">
+          </li>
+
+          <li><hr class="dropdown-divider"></li>
+
+          <!-- Valutazione Minima -->
+          <li><h6 class="dropdown-header">Rating Minimo</h6></li>
+          <li class="px-3">
+              <input type="number" class="form-control" placeholder="Min. valutazione positiva (1-5)" [(ngModel)]="filtri.ratingRecensioniPositive" (change)="applicaFiltri()">
+          </li>
+      </ul>
+  </div>
 </div>

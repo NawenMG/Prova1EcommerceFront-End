@@ -1,4 +1,3 @@
-// services/setting-site.service.ts
 import { Injectable } from '@angular/core';
 import axios from 'axios';
 import { Observable, from, catchError, map, of } from 'rxjs';
@@ -18,7 +17,7 @@ export class SettingSiteService {
   // Recupera le impostazioni del sito per un determinato utente
   getImpostazioni(userId: string): Observable<SettingSite | null> {
     return from(axios.get<SettingSite>(`${this.baseUrl}/${userId}`)).pipe(
-      map((response) => response.data),
+      map(response => response.data),
       catchError(() => of(null))
     );
   }
@@ -26,7 +25,7 @@ export class SettingSiteService {
   // Salva o aggiorna le impostazioni per un utente
   salvaImpostazioni(userId: string, settings: SettingSite): Observable<string> {
     return from(axios.post(`${this.baseUrl}/save/${userId}`, settings)).pipe(
-      map((response) => response.data),
+      map(response => response.data),
       catchError(() => of('Errore durante il salvataggio delle impostazioni'))
     );
   }
@@ -34,7 +33,7 @@ export class SettingSiteService {
   // Resetta le impostazioni di un utente
   resetImpostazioni(userId: string): Observable<string> {
     return from(axios.delete(`${this.baseUrl}/reset/${userId}`)).pipe(
-      map((response) => response.data),
+      map(response => response.data),
       catchError(() => of('Errore durante il reset delle impostazioni'))
     );
   }

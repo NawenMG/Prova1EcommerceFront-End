@@ -1,56 +1,157 @@
+<!--
+ <div class="container" style="background-color: #FAFAFA; margin: 50px;">
+
+  <div class="row g-4">
+      <div class="col-md-2" *ngFor="let product of prodotti$ | async; let i = index">
+
+          <div class="product-card card hvr-shadow" style="border-radius: 15px; overflow: hidden;">
+
+              <div class="position-absolute top-0 end-0 p-3">
+                <i class="fas fa-heart hvr-pulse"
+    [ngClass]="{'text-danger': (isInWishlist(product.id) | async),
+                'text-secondary': !(isInWishlist(product.id) | async)}"
+    (click)="toggleWishlistHandler(product)"
+    style="cursor: pointer;">
+</i>
+
+
+
+                  <i class="fas fa-bookmark ms-3 hvr-pop text-secondary"></i>
+              </div>
+
+              <img [src]="product.immagineUrl || 'https://via.placeholder.com/200'"
+                   class="card-img-top img-fluid"
+                   alt="Immagine prodotto">
+
+              <div class="card-body">
+
+                  <h5 class="card-title">{{ product.nome }}</h5>
+
+                  <p class="card-text price">{{ product.prezzo | currency:'EUR' }}</p>
+
+                  <div class="rating mb-3">
+                      <ng-container *ngFor="let star of stars; let j = index">
+                          <i class="fas fa-star"
+                              [ngClass]="{'text-warning': j < ((valutazioniMedie$ | async)?.[product.id] || 0),
+                                          'text-muted': j >= ((valutazioniMedie$ | async)?.[product.id] || 0)}">
+                          </i>
+                      </ng-container>
+                      <p class="mt-2">
+                          Media: {{ (valutazioniMedie$ | async)?.[product.id] ?? 'N/A' }} stelle
+                      </p>
+                  </div>
+
+                  <p class="card-text">{{ product.descrizione || 'Nessuna descrizione disponibile' }}</p>
+
+                  <button class="btn btn-success w-100 hvr-wobble-horizontal mb-2"
+                          (click)="viewDetails(product)">
+                      VEDI DETTAGLI
+                  </button>
+
+                  <button class="btn btn-primary w-100 hvr-grow mb-2"
+                          (click)="addToCart(product)">
+                      <i class="fas fa-shopping-cart"></i> AGGIUNGI AL CARRELLO
+                  </button>
+
+                  <button class="btn btn-warning w-100 hvr-shrink"
+                          (click)="createOrder()">
+                      <i class="fas fa-box"></i> ORDINA ORA
+                  </button>
+              </div>
+
+          </div>
+      </div>
+  </div>
+
+  <nav aria-label="Page navigation example" class="d-flex justify-content-center align-items-center mt-4">
+      <ul class="pagination">
+          <li class="page-item" [class.disabled]="currentPage.value === 0">
+              <a class="page-link" href="#" (click)="changePage(false)">Previous</a>
+          </li>
+
+          <li class="page-item">
+              <a class="page-link" href="#">
+                  Pagina {{ currentPage.value + 1 }}
+              </a>
+          </li>
+
+          <li class="page-item">
+              <a class="page-link" href="#" (click)="changePage(true)">Next</a>
+          </li>
+      </ul>
+  </nav>
+
+</div> -->
+
+
+
+
+
 <div class="container " style="background-color: #FAFAFA; margin: 50px;">
 
-    <!-- Grid con 5 card per riga -->
-    <div class="row g-4">
-        <div class="col-md-2" *ngFor="let product of products; let i = index">
-            <!-- Card del Prodotto -->
-            <div class="product-card card hvr-shadow" style="border-radius: 15px; overflow: hidden;">
+  <!-- Grid con 5 card per riga -->
+  <div class="row g-4">
+      <div class="col-md-2" *ngFor="let product of products; let i = index">
+          <!-- Card del Prodotto -->
+          <div class="product-card card hvr-shadow" style="border-radius: 15px; overflow: hidden;">
 
-                <!-- Icone Cuoricino e Salvataggio -->
-                <div class="position-absolute top-0 end-0 p-3">
-                    <i class="fas fa-heart hvr-pulse"
-                    [ngClass]="{'text-danger': product.isFavorite, 'text-secondary': !product.isFavorite}"
-                    (click)="toggleFavorite(i)"
-                    style="cursor: pointer;"></i>
+              <!-- Icone Cuoricino e Salvataggio -->
+              <div class="position-absolute top-0 end-0 p-3">
+                  <i class="fas fa-heart hvr-pulse"
+                  [ngClass]="{'text-danger': product.isFavorite, 'text-secondary': !product.isFavorite}"
+                  (click)="toggleFavorite(i)"
+                  style="cursor: pointer;"></i>
 
-                    <i class="fas fa-bookmark ms-3 hvr-pop"
-                    [ngClass]="{'text-primary': product.isSaved, 'text-secondary': !product.isSaved}"
-                    (click)="saveProduct(i)"
-                    style="cursor: pointer;"></i>
-                </div>
+                  <i class="fas fa-bookmark ms-3 hvr-pop"
+                  [ngClass]="{'text-primary': product.isSaved, 'text-secondary': !product.isSaved}"
+                  (click)="saveProduct(i)"
+                  style="cursor: pointer;"></i>
+              </div>
 
-                <!-- Immagine del prodotto -->
-                <img [src]="product.image" class="card-img-top img-fluid" alt="Product Image">
+              <!-- Immagine del prodotto -->
+              <img [src]="product.image" class="card-img-top img-fluid" alt="Product Image">
 
-                <!-- Corpo della Card -->
-                <div class="card-body">
-                    <h5 class="card-title">{{ product.title }}</h5>
-                    <p class="card-text price">{{ product.price | currency:'EUR' }}</p>
+              <!-- Corpo della Card -->
+              <div class="card-body">
+                  <h5 class="card-title">{{ product.title }}</h5>
+                  <p class="card-text price">{{ product.price | currency:'EUR' }}</p>
 
-                    <!-- Stelline di Valutazione -->
-                    <div class="rating mb-3">
-                        <ng-container *ngFor="let star of stars; let j = index">
-                            <i class="fas fa-star"
-                            [ngClass]="{'text-warning': j < product.rating, 'text-muted': j >= product.rating}"
-                            (click)="toggleStarRating(i, j + 1)"
-                            style="cursor: pointer;"></i>
-                        </ng-container>
-                        <p class="mt-2">Hai selezionato: {{ product.rating }} stelle</p>
-                    </div>
+                  <!-- Stelline di Valutazione -->
+                  <div class="rating mb-3">
+                      <ng-container *ngFor="let star of stars; let j = index">
+                          <i class="fas fa-star"
+                          [ngClass]="{'text-warning': j < product.rating, 'text-muted': j >= product.rating}"
+                          (click)="toggleStarRating(i, j + 1)"
+                          style="cursor: pointer;"></i>
+                      </ng-container>
+                      <p class="mt-2">Hai selezionato: {{ product.rating }} stelle</p>
+                  </div>
 
-                    <!-- Descrizione -->
-                    <p class="card-text">{{ product.description }}</p>
+                  <!-- Descrizione -->
+                  <p class="card-text">{{ product.description }}</p>
 
-                    <!-- Pulsanti -->
-                    <button class="btn hvr-wobble-horizontal" (click)="viewDetails(i)">
-                      PAGA ADESSO
-                    </button>
-                    <hr>
-                    <button class="btn hvr-grow" (click)="addToCart(i)">
-                        <i class="fas fa-shopping-cart"></i> AGGIUNGI AL CARRELLO
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
+                  <!-- Pulsanti -->
+                  <button class="btn hvr-wobble-horizontal" (click)="viewDetails(i)">
+                    PAGA ADESSO
+                  </button>
+                  <hr>
+                  <button class="btn hvr-grow" (click)="addToCart(i)">
+                      <i class="fas fa-shopping-cart"></i> AGGIUNGI AL CARRELLO
+                  </button>
+              </div>
+          </div>
+      </div>
+  </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+

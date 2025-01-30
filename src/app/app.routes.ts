@@ -11,46 +11,26 @@ import { AdminUiComponent } from './ui/admin-ui/admin-ui.component';
 import { ControlleruiComponent } from './ui/controllerui/controllerui.component';
 import { TransizioniUiComponent } from './ui/transizioni-ui/transizioni-ui.component';
 import { DeliveryUiComponent } from './ui/delivery-ui/delivery-ui.component';
+import { AuthGuard } from './security/auth-guard.service';
 
 export const routes: Routes = [
-  {
-    path: '', component: HomeComponent
-  },
-  {
-    path: '**', component: HomeComponent
-  },
-  {
-    path: '/list', component: ListProductsComponent
-  },
-  {
-    path: '/product', component: DetailsProductComponent
-  },
-  {
-    path: '/profile', component: ProfileComponent
-  },
-  {
-    path: '/registrazione', component: RegistrazioneComponent
-  },
-  {
-    path: '/login', component: LoginComponent
-  },
-  {
-    path: '/vendita', component: VenditaProdottiComponent
-  },
-  {
-    path: '/chat', component: ChatComponent
-  },
-  {
-    path: '/admin', component: AdminUiComponent
-  },
-  {
-    path: '/controller', component: ControlleruiComponent
-  },
-  {
-    path: '/transizioni', component: TransizioniUiComponent
-  },
-  {
-    path: '/delivery', component: DeliveryUiComponent
-  }
+  { path: '', component: HomeComponent },
+  { path: 'list', component: ListProductsComponent },
+  { path: 'product', component: DetailsProductComponent },
 
+  // 🔹 Routes che richiedono autenticazione con ruoli specifici
+  { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard], data: { roles: ['USERS'] } },
+  { path: 'vendita', component: VenditaProdottiComponent, canActivate: [AuthGuard], data: { roles: ['USERS'] } },
+  { path: 'chat', component: ChatComponent, canActivate: [AuthGuard], data: { roles: ['USERS', 'ADMIN', 'CONTROLLER', 'USERDELIVERY', 'USERMONITORING', 'USERAI', 'USERTRANSITION'] } },
+  { path: 'admin', component: AdminUiComponent, canActivate: [AuthGuard], data: { roles: ['ADMIN'] } },
+  { path: 'controller', component: ControlleruiComponent, canActivate: [AuthGuard], data: { roles: ['CONTROLLER'] } },
+  { path: 'transizioni', component: TransizioniUiComponent, canActivate: [AuthGuard], data: { roles: ['USERTRANSITION'] } },
+  { path: 'delivery', component: DeliveryUiComponent, canActivate: [AuthGuard], data: { roles: ['USERDELIVERY'] } },
+
+  // 🔹 Routes pubbliche
+  { path: 'registrazione', component: RegistrazioneComponent },
+  { path: 'login', component: LoginComponent },
+
+  // 🔹 Route wildcard per gestire pagine non trovate (deve stare alla fine)
+  { path: '**', redirectTo: 'login' }
 ];

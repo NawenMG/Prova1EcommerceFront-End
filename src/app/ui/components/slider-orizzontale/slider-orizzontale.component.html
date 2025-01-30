@@ -48,3 +48,47 @@
       <span class="carousel-control-next-icon"></span>
   </button>
 </div>
+
+
+
+<!--
+<div id="carouselExample" class="carousel slide w-100">
+  <div class="carousel-inner">
+    <div *ngIf="prodottiCasuali.length > 0; else loading">
+
+        <div *ngFor="let slideGroup of splitProductsIntoSlides(prodottiCasuali, 6); let first = first"
+             class="carousel-item" [ngClass]="{'active': first}">
+
+            <div class="image-container">
+                <img *ngFor="let prodotto of slideGroup"
+                     [src]="defaultImage"
+                     class="circular-image"
+                     alt="{{ prodotto.nome }}"
+                     (click)="navigateToProduct(prodotto)"
+                     style="cursor: pointer;">
+            </div>
+        </div>
+    </div>
+
+    <ng-template #loading>
+        <div class="carousel-item active">
+            <div class="image-container">
+                <p class="text-center">Caricamento prodotti...</p>
+            </div>
+        </div>
+    </ng-template>
+
+</div>
+
+<button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+</button>
+<button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+</button>
+</div>
+
+
+
+
+-->

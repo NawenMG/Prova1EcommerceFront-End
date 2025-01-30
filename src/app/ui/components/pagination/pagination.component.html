@@ -1,9 +1,19 @@
-<nav aria-label="Page navigation example" class="d-flex justify-content-center align-items-center mt-4">
+<nav aria-label="Page navigation" class="d-flex justify-content-center align-items-center mt-4">
   <ul class="pagination">
-      <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-      <li class="page-item"><a class="page-link" href="#">1</a></li>
-      <li class="page-item"><a class="page-link" href="#">2</a></li>
-      <li class="page-item"><a class="page-link" href="#">3</a></li>
-      <li class="page-item"><a class="page-link" href="#">Next</a></li>
+    <!-- Pulsante Precedente -->
+    <li class="page-item" [ngClass]="{'disabled': currentPage === 0}">
+      <a class="page-link" href="#" (click)="changePage(currentPage - 1)">Precedente</a>
+    </li>
+
+    <!-- Numeri di pagina -->
+    <li class="page-item" *ngFor="let page of [].constructor(totalPages); let i = index"
+        [ngClass]="{'active': i === currentPage}">
+      <a class="page-link" href="#" (click)="changePage(i)">{{ i + 1 }}</a>
+    </li>
+
+    <!-- Pulsante Successivo -->
+    <li class="page-item" [ngClass]="{'disabled': currentPage === totalPages - 1}">
+      <a class="page-link" href="#" (click)="changePage(currentPage + 1)">Successivo</a>
+    </li>
   </ul>
 </nav>
