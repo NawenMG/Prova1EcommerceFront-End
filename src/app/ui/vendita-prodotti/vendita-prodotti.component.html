@@ -1,4 +1,82 @@
-<body>
+<!-- <body>
+  <div class="sell-product-container animate__animated animate__backInDown hvr-glow">
+    <h1 class="text-center sell-title">VENDI PRODOTTO</h1>
+
+    <form class="sell-form" (ngSubmit)="submitForm()">
+        <div class="row">
+            <div class="col-md-5 animate__animated animate__backInLeft">
+                <div class="mb-3">
+                    <label class="form-label"><strong>Nome</strong></label>
+                    <input type="text" class="form-control" placeholder="Inserisci il nome del prodotto" [(ngModel)]="productName" name="productName" required>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label"><strong>Prezzo</strong></label>
+                    <input type="number" class="form-control" placeholder="Inserisci il prezzo" [(ngModel)]="productPrice" name="productPrice" required>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label"><strong>Descrizione</strong></label>
+                    <textarea class="form-control" rows="4" placeholder="Inserisci una descrizione" [(ngModel)]="productDescription" name="productDescription" required></textarea>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label"><strong>Quantità disponibile</strong></label>
+                    <input type="number" class="form-control" min="1" value="1" [(ngModel)]="productQuantity" name="productQuantity">
+                </div>
+
+                <div class="profile-pic-container text-center">
+                  <img [src]="defaultImage" alt="Immagine Profilo" class="profile-pic hvr-pulse">
+                  <input type="file" class="form-control mt-2" (change)="uploadProfilePicture($event)">
+                  <button type="button" class="btn profile-btn mt-2" (click)="uploadProfilePicture()">INSERISCI FOTO E VIDEO</button>
+                </div>
+            </div>
+
+            <div class="col-md-5 animate__animated animate__backInRight" id="info">
+                <h5 class="text-center"><strong>Informazioni venditore</strong></h5>
+                <div class="mb-3" *ngFor="let info of sellerInformations; let i = index">
+                    <input type="text" class="form-control" placeholder="Inserisci informazioni venditore" [(ngModel)]="sellerInformations[i]" name="sellerInfo{{i}}">
+                </div>
+            </div>
+
+            <div class="product-table animate__animated animate__backInDown col-md-10 offset-md-1">
+                 <h5 class="text-center"><strong>Scheda Tecnica del Prodotto</strong></h5>
+                 <table class="table table-striped table-bordered">
+                     <thead>
+                         <tr>
+                             <th>#</th>
+                             <th>INFO</th>
+                             <th>INFO</th>
+                             <th>Azioni</th>
+                         </tr>
+                     </thead>
+                     <tbody>
+                         <tr *ngFor="let row of productInfo; let i = index">
+                             <td>{{ i + 1 }}</td>
+                             <td><input type="text" class="form-control" [(ngModel)]="row.info1" name="info1{{i}}"></td>
+                             <td><input type="text" class="form-control" [(ngModel)]="row.info2" name="info2{{i}}"></td>
+                             <td><button type="button" class="btn btn-danger btn-sm" (click)="removeProductInfo(i)">✖</button></td>
+                         </tr>
+                     </tbody>
+                 </table>
+                 <div class="text-center">
+                     <button type="button" class="btn add-row-btn hvr-shadow" (click)="addProductInfo()">AGGIUNGI INFO</button>
+                 </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-4">
+            <button type="submit" class="btn submit-btn hvr-float-shadow">REGISTRA PRODOTTO</button>
+        </div>
+    </form>
+  </div>
+</body>
+ -->
+
+
+
+
+ <body>
   <div class="sell-product-container animate__animated  animate__backInDown hvr-glow">
     <!-- Titolo -->
     <h1 class="text-center sell-title">VENDI PRODOTTO</h1>

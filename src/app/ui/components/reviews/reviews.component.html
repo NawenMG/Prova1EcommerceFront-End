@@ -1,4 +1,70 @@
-<div class="reviews-container">
+<!-- <div class="reviews-container">
+  <div class="rating-section">
+    <h2>RATING</h2>
+    <div *ngFor="let rating of [5, 4, 3, 2, 1]">
+      <div class="stars">
+        <span *ngFor="let star of generateStars(rating)">
+          <i class="fas fa-star"></i>
+        </span>
+      </div>
+      <div class="percentage">
+        {{ (mediaValutazione$ | async) ?? 0 | number:'1.1-1' }}/5
+      </div>
+    </div>
+  </div>
+
+  <div class="reviews-section">
+    <h2>RECENSIONI</h2>
+    <div *ngFor="let review of (recensioni$ | async) ?? []">
+      <h3><strong>Anonimo</strong></h3>
+      <div class="stars">
+        <span *ngFor="let star of generateStars(review.valutazione)">
+          <i class="fas fa-star"></i>
+        </span>
+      </div>
+      <h4><strong>{{ review.titolo }}</strong></h4>
+      <p>{{ review.descrizione }}</p>
+    </div>
+
+    <div class="buttons-container">
+      <button class="btn add-review" data-bs-toggle="offcanvas" data-bs-target="#offcanvasReview">
+        AGGIUNGI RECENSIONE
+      </button>
+      <button class="btn see-all" (click)="seeAllReviews()">VEDI TUTTO</button>
+    </div>
+  </div>
+</div>
+
+
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasReview" aria-labelledby="offcanvasReviewLabel">
+  <div class="offcanvas-header">
+    <h5 id="offcanvasReviewLabel">Aggiungi una Recensione</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <form>
+      <div class="mb-3">
+        <label for="reviewTitle" class="form-label">Titolo</label>
+        <input type="text" class="form-control" id="reviewTitle" [(ngModel)]="newReview.titolo" name="reviewTitle" required>
+      </div>
+      <div class="mb-3">
+        <label for="reviewDescription" class="form-label">Descrizione</label>
+        <textarea class="form-control" id="reviewDescription" [(ngModel)]="newReview.descrizione" name="reviewDescription" required></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="reviewRating" class="form-label">Valutazione</label>
+        <select class="form-select" id="reviewRating" [(ngModel)]="newReview.valutazione" name="reviewRating">
+          <option *ngFor="let star of [5, 4, 3, 2, 1]" [value]="star">{{ star }} ★</option>
+        </select>
+      </div>
+      <button type="button" class="btn btn-primary w-100" (click)="addReview()">Invia Recensione</button>
+    </form>
+  </div>
+</div>
+ -->
+
+
+ <div class="reviews-container">
   <!-- Sezione Rating a Sinistra -->
   <div class="rating-section">
     <h2>RATING</h2>

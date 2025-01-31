@@ -1,6 +1,7 @@
 // store/recensioni.state.ts
 export interface Recensione {
   id: string;
+  productId: string; // ✅ Aggiunto productId
   titolo: string;
   descrizione: string;
   valutazione: number;

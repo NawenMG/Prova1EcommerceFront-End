@@ -1,7 +1,7 @@
 // store/recensioni.state.ts
 export interface Recensione {
   id: string;
-  userId: string;
+  //userId: string;
   productId: string;
   titolo: string;
   descrizione: string;

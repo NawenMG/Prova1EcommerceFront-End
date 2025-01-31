@@ -1,13 +1,16 @@
+
+
 import { Injectable } from '@angular/core';
 import { CanActivate, Router, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { Observable, combineLatest } from 'rxjs';
+import { Observable, combineLatest, of } from 'rxjs';
 import { map, take, switchMap } from 'rxjs/operators';
+
+/// JWT + Sessioni Selectors
 import { selectIsAuthenticated, selectUserRole } from '../store/securityStore/storeJWT+Sessioni/auth.selectors';
 
-/// OAuth Selectors
+/// OAuth2 Selectors
 import { selectIsAuthenticatedOAuth, selectUserRoleOAuth } from '../store/securityStore/storeOAuth2/oauth.selectors';
-///
 
 @Injectable({
   providedIn: 'root'
@@ -18,37 +21,35 @@ export class AuthGuard implements CanActivate {
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> {
     return combineLatest([
       this.store.select(selectIsAuthenticated),
-      this.store.select(selectIsAuthenticatedOAuth)
+      this.store.select(selectIsAuthenticatedOAuth),
+      this.store.select(selectUserRole),
+      this.store.select(selectUserRoleOAuth)
     ]).pipe(
       take(1),
-      switchMap(([isAuthenticatedJWT, isAuthenticatedOAuth]) => {
+      switchMap(([isAuthenticatedJWT, isAuthenticatedOAuth, userRoleJWT, userRoleOAuth]) => {
         const isAuthenticated = isAuthenticatedJWT || isAuthenticatedOAuth;
+        const userRole = userRoleJWT || userRoleOAuth;
 
         if (!isAuthenticated) {
           this.router.navigate(['/login']);
-          return new Observable<boolean>(observer => observer.next(false));
+          return of(false);
         }
 
-        // Se il percorso richiede un ruolo specifico, lo controlliamo
+        // ✅ Controllo se è richiesto un ruolo specifico per la route
         const requiredRoles: string[] = route.data['roles'];
-        if (requiredRoles) {
-          return combineLatest([
-            this.store.select(selectUserRole),
-            this.store.select(selectUserRoleOAuth)
-          ]).pipe(
-            take(1),
-            map(([userRoleJWT, userRoleOAuth]) => {
-              const userRole = userRoleJWT || userRoleOAuth; // Se è autenticato con OAuth, userà quel ruolo
-              if (!requiredRoles.includes(userRole)) {
-                this.router.navigate(['/access-denied']);
-                return false;
-              }
-              return true;
-            })
-          );
+        if (requiredRoles && !requiredRoles.includes(userRole)) {
+          this.router.navigate(['/access-denied']);
+          return of(false);
         }
 
-        return new Observable<boolean>(observer => observer.next(true));
+       /*  // ✅ Controllo se è richiesto un userId specifico (ad esempio per profili personali o dati sensibili)
+        const requiredUserId: string = route.data['userId'];
+        if (requiredUserId && userId !== requiredUserId) {
+          this.router.navigate(['/access-denied']);
+          return of(false);
+        } */
+
+        return of(true);
       })
     );
   }

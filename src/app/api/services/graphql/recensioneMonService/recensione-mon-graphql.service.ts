@@ -1,10 +1,10 @@
-// services/recensioni.service.ts
 import { Injectable } from '@angular/core';
 import { Apollo, gql } from 'apollo-angular';
 import { Observable, map, catchError, of } from 'rxjs';
 
 export interface Recensione {
   id: string;
+  productId: string
   titolo: string;
   descrizione: string;
   valutazione: number;
@@ -17,11 +17,11 @@ export interface Recensione {
 export class RecensioniService {
   constructor(private apollo: Apollo) {}
 
-  // Query per ottenere tutte le recensioni con parametri dinamici
-  getRecensioni(paramQuery: any, recensione: any): Observable<Recensione[]> {
+  // ✅ Query per ottenere recensioni con paginazione
+  getRecensioni(paramQuery: any, recensione: any, limit: number = 5, offset: number = 0): Observable<Recensione[]> {
     const GET_RECENSIONI = gql`
-      query ($paramQuery: ParamQueryDbDocInput, $recensione: RecensioniInput) {
-        recensioni(paramQuery: $paramQuery, recensioni: $recensione) {
+      query ($paramQuery: ParamQueryDbDocInput, $recensione: RecensioniInput, $limit: Int, $offset: Int) {
+        recensioni(paramQuery: $paramQuery, recensioni: $recensione, limit: $limit, offset: $offset) {
           id
           titolo
           descrizione
@@ -33,7 +33,7 @@ export class RecensioniService {
 
     return this.apollo.query<{ recensioni: Recensione[] }>({
       query: GET_RECENSIONI,
-      variables: { paramQuery, recensione },
+      variables: { paramQuery, recensione, limit, offset }, // ✅ Aggiunto supporto per paginazione
     }).pipe(
       map((response) => response.data.recensioni),
       catchError((error) => {

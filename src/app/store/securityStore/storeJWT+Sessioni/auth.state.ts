@@ -1,3 +1,5 @@
+
+
 export interface AuthState {
   authenticated: boolean;
   role: string;
