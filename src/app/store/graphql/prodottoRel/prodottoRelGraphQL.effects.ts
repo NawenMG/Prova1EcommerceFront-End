@@ -1,4 +1,3 @@
-// store/prodotti.effects.ts
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { ProdottiGraphqlService } from '../../../api/services/graphql/prodottoRelService/prodotto-rel-graphql.service';
@@ -12,12 +11,16 @@ export class ProdottiEffects {
   loadProdotti$ = createEffect(() =>
     this.actions$.pipe(
       ofType(ProdottiActions.loadProdotti),
-      mergeMap((action) =>
-        this.prodottiService.getProdotti(action.paramQuery, action.prodotti).pipe(
-          map((prodotti) => ProdottiActions.loadProdottiSuccess({ prodotti })),
-          catchError((error) => of(ProdottiActions.loadProdottiFailure({ error: error.message })))
-        )
-      )
+      mergeMap((action) => {
+        return this.prodottiService.getProdotti(action.paramQuery, action.prodotti, action.limit, action.offset).pipe(
+          map((prodotti) =>
+            ProdottiActions.loadProdottiSuccess({ prodotti })
+          ),
+          catchError((error) =>
+            of(ProdottiActions.loadProdottiFailure({ error: error.message || 'Errore nel caricamento dei prodotti' }))
+          )
+        );
+      })
     )
   );
 }

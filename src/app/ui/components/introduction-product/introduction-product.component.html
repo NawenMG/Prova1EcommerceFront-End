@@ -1,4 +1,74 @@
-<div class="container product-container">
+<!-- <div class="container product-container">
+  <ng-container *ngIf="product$ | async as product">
+
+    <div id="productCarousel" class="carousel slide w-50 h-100 me-5 mt-3" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img [src]="product.immagineUrl || defaultImage" class="d-block w-100 img-fluid rounded" alt="Product Image">
+        </div>
+        <div class="carousel-item" *ngFor="let img of [product.immagineUrl, product.immagineUrl]">
+          <img [src]="img || defaultImage" class="d-block w-100 img-fluid rounded" alt="Product Image">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+
+    <div class="product-details w-50 animate__animated animate__fadeInRight">
+      <h1 class="product-title">{{ product.nome }}</h1>
+
+      <div class="icons position-absolute top-0 end-0 p-3">
+        <i class="fas fa-heart hvr-pulse"
+           [ngClass]="{'text-danger': isFavorite}"
+           (click)="toggleFavorite()"></i>
+        <i class="fas fa-bookmark ms-3 hvr-pop"
+           [ngClass]="{'text-primary': isSaved}"
+           (click)="toggleSave()"></i>
+      </div>
+
+      <div class="rating mb-3">
+        <i *ngFor="let star of [0, 1, 2, 3, 4]"
+           class="fas fa-star"
+           [ngClass]="{'text-warning': star < (mediaValutazione$ | async)!, 'text-muted': star >= (mediaValutazione$ | async)!}">
+        </i>
+      </div>
+
+
+      <button class="btn price-button animate__animated animate__bounceIn">{{ product.prezzo | currency: 'EUR' }}</button>
+
+      <label class="mt-3">Tipo</label>
+      <select class="form-select" [(ngModel)]="selectedType">
+        <option *ngFor="let type of [product.categoria]">{{ type }}</option>
+      </select>
+
+      <label class="mt-3">Quantità</label>
+      <div class="quantity d-flex align-items-center">
+        <input type="number" [(ngModel)]="quantity" min="1" class="form-control w-25" />
+        <button class="btn btn-outline-secondary ms-2" (click)="incrementQuantity()">+</button>
+        <button class="btn btn-outline-secondary ms-2" (click)="decrementQuantity()">-</button>
+      </div>
+
+      <p class="description mt-3">{{ product.descrizione }}</p>
+
+      <button class="btn btn-info w-100 mt-3 hvr-grow" (click)="buyNow()">COMPRA ORA</button>
+      <button class="btn btn-info w-100 mt-3 hvr-wobble-horizontal" (click)="addToCart()">
+        <i class="fas fa-shopping-cart"></i> AGGIUNGI AL CARRELLO
+      </button>
+      <button class="btn btn-info w-100 mt-3 hvr-bounce-to-right" (click)="addToWishlist()">
+        <i class="fas fa-heart"></i> AGGIUNGI ALLA WISHLIST
+      </button>
+    </div>
+
+  </ng-container>
+</div>
+ -->
+
+
+ <div class="container product-container">
   <!-- Carousel Immagini -->
   <div id="productCarousel" class="carousel slide w-50 h-100 me-5 mt-3" data-bs-ride="carousel">
       <div class="carousel-inner">

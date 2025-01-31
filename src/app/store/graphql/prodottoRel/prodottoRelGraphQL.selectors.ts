@@ -1,4 +1,3 @@
-// store/prodotti.selectors.ts
 import { createSelector, createFeatureSelector } from '@ngrx/store';
 import { ProdottiState } from './prodottoRelGraphQL.state';
 

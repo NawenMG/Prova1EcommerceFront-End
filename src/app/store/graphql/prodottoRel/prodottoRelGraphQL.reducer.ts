@@ -1,4 +1,3 @@
-// store/prodotti.reducer.ts
 import { createReducer, on } from '@ngrx/store';
 import * as ProdottiActions from './prodottoRelGraphQL.actions';
 import { ProdottiState, initialState } from './prodottoRelGraphQL.state';
