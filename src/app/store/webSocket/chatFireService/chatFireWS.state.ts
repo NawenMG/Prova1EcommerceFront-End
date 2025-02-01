@@ -1,4 +1,3 @@
-// store/chat.state.ts
 export interface MessageData {
   id: string;
   contenuto: string;

@@ -46,16 +46,17 @@ export class SegnalazioniService {
     );
   }
 
-  // Aggiorna una segnalazione esistente
-  updateSegnalazione(id: string, segnalazione: Segnalazione): Observable<void> {
-    return from(axios.put(`${this.baseUrl}/${id}`, segnalazione)).pipe(
-      map(() => void 0),
-      catchError((error) => {
-        console.error('Errore durante l\'aggiornamento della segnalazione:', error);
-        return of(void 0);
-      })
-    );
-  }
+  // Aggiorna lo stato 'risolto' di una segnalazione esistente
+updateSegnalazione(id: string, risolto: boolean): Observable<void> {
+  return from(axios.patch(`${this.baseUrl}/${id}`, { risolto })).pipe(
+    map(() => void 0),
+    catchError((error) => {
+      console.error('Errore durante l\'aggiornamento della segnalazione:', error);
+      return of(void 0);
+    })
+  );
+}
+
 
   // Elimina una segnalazione per ID
   deleteSegnalazione(id: string): Observable<void> {
